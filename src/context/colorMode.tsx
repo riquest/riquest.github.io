@@ -11,24 +11,28 @@ const setCSSVariables = (colorMode: ColorModeType) => {
   Object.entries(modeValues).forEach(([key, value]) => document.documentElement.style.setProperty(`--${key}`, value));
 };
 
+// Check if window is defined (so if in the browser or in node.js).
+const isBrowser = typeof window !== "undefined";
+
 function getInitialColorMode({ defaultColorMode }: { defaultColorMode: ColorModeType }): ColorModeType {
-  const persistedColorPreference = window.localStorage.getItem(COLOR_MODE);
-  const isValidPersistedColorPreference = (test: string | null): test is ColorModeType =>
-    persistedColorPreference === "light" || persistedColorPreference === "dark";
+  if (isBrowser) {
+    const persistedColorPreference = window.localStorage.getItem(COLOR_MODE);
+    const isValidPersistedColorPreference = (test: string | null): test is ColorModeType =>
+      persistedColorPreference === "light" || persistedColorPreference === "dark";
 
-  // If the user has explicitly chosen light or dark,
-  // let's use it.
-  if (isValidPersistedColorPreference(persistedColorPreference)) {
-    console.log("persistedColorPreference", persistedColorPreference);
-    return persistedColorPreference;
-  }
-  // If they haven't been explicit, let's check the media
-  // query
-  const mql = window.matchMedia("(prefers-color-scheme: dark)");
-  const hasMediaQueryPreference = typeof mql.matches === "boolean";
+    // If the user has explicitly chosen light or dark,
+    // let's use it.
+    if (isValidPersistedColorPreference(persistedColorPreference)) {
+      return persistedColorPreference;
+    }
+    // If they haven't been explicit, let's check the media
+    // query
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const hasMediaQueryPreference = typeof mql.matches === "boolean";
 
-  if (hasMediaQueryPreference) {
-    return mql.matches ? "dark" : "light";
+    if (hasMediaQueryPreference) {
+      return mql.matches ? "dark" : "light";
+    }
   }
   // If they are using a browser/OS that doesn't support
   // color themes, let's default to 'light'.

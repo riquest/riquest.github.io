@@ -14,6 +14,8 @@ const siteMetadata = {
   defaultLanguage,
   languages,
   languageConfig,
+  darkMode: false,
+  switchTheme: true,
 };
 
 /** @type { import("gatsby").GatsbyConfig } */
