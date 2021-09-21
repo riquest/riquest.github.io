@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-react-intl";
 import { ColorModeContext } from "../context/colorMode";
 
-export default function () {
+const Logo = (): JSX.Element => {
+  const [logo, setLogo] = useState("logo");
   const intl = useIntl();
   const { colorMode } = useContext(ColorModeContext);
   const query = useStaticQuery(graphql`
@@ -17,9 +18,13 @@ export default function () {
     }
   `);
 
-  const logo = colorMode === "dark" ? "logoDark" : "logo";
+  useEffect(() => {
+    setLogo(colorMode === "dark" ? "logoDark" : "logo");
+  }, [colorMode]);
 
   return (
     <img className="logo" src={query.site.siteMetadata[logo]} alt={intl.formatMessage({ id: "default.seoTitle" })} />
   );
-}
+};
+
+export default Logo;

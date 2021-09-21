@@ -10,7 +10,7 @@ const siteMetadata = {
   icon: "/images/logo-250px.png",
   authorTwitter: "@",
   portfolioItemsPerPage: 10,
-  defaultColorMode: "dark", // "light" or "dark"
+  defaultColorMode: "light", // "light" or "dark"
   defaultLanguage,
   languages,
   languageConfig,
