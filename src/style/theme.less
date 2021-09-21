@@ -1,0 +1,272 @@
+@textPrimary: var(--textPrimary);
+@textSecondary: var(--textSecondary);
+@textTertiary:var(--textTertiary);
+@colorPrimary: var(--mainRed);
+@colorSecondary: var(--textSecondary);
+@colorError : var(--mainRed);;
+@colorSuccess : #4CAF50;
+@fontBold: 'Work Sans', sans-serif;
+@fontNormal: "Poppins", sans-serif;
+@gradientPrimary: var(--mainRed);
+@gradientSecondary: var(--gradientSecondary);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+body{
+	font-family: @fontNormal;
+	font-size: 18px;
+	color: var(--textPrimary);
+}
+
+.text-secondary {
+	&, & a{
+		color: var(--textSecondary);
+	}
+}
+
+.text-tertiary {
+	&, & a{
+		color: @textTertiary;
+	}
+}
+
+.text-primary{
+	&, & a{
+		color: var(--textPrimary);
+	}
+}
+
+.color-primary{
+	color: @colorPrimary;
+}
+
+.color-secondary{
+	color: @colorSecondary;
+}
+
+.res-message{
+	transition: opacity .35s;
+	opacity: 0;
+}
+
+.res-message, .color-success{
+	color: @colorSuccess;
+}
+
+.color-error{
+	color: @colorError;
+}
+
+.wall svg text{
+	font: bold 10px sans-serif;
+	font-family: @fontBold;
+}
+
+#menu-open path{
+	fill:  var(--textSecondary);
+}
+
+.font-bold,h1,h2,h3,h4,h5,h6{
+	font-family: @fontBold;
+}
+
+.btn{
+	font-weight: bold;
+	font-size: 1.1rem !important;
+	margin: 1rem 0;
+	padding: 0 1rem !important;
+	background-image: linear-gradient(to right, @gradientPrimary, @gradientSecondary) !important;
+	color: #fff !important;
+	border: none !important;
+
+	&.disabled{
+		opacity: .7;
+	}
+}
+
+.overlay-link{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	left: 0;
+	top: 0;
+}
+
+.pseudo-divider:after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(to left, @colorPrimary, @colorSecondary) !important;
+	bottom: -4px;
+	left: 0;
+}
+
+.icon{
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+section{
+	padding: 60px 0;
+
+
+	svg {
+		display: block;
+		margin: 0 auto;
+
+		text {
+			font: bold 8px sans-serif;
+			font-family: @fontBold;
+		}
+	}
+}
+
+.section-title{
+	padding: 20px 0;
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+.field-box{
+	width: 100%;
+	font-size: 20px;
+	color: var(--textPrimary);
+	position: relative;
+	z-index: 2;
+	outline: 0;
+	display: block;
+	resize: none;
+}
+
+.field-box:not(textarea){
+	height: 48px !important;
+}
+
+.input-border{
+	padding: 1px;
+	position: relative;
+
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to left,@colorPrimary,@colorSecondary) !important;
+		border-radius: 5px;
+	}
+}
+
+nav ul li a:before{
+	background: @colorSecondary;
+}
+
+.fill-primary{
+	&, & path{
+		fill: @colorPrimary;
+	}
+}
+
+.fill-secondary{
+	&, & path{
+		fill: var(--textSecondary);
+	}
+}
+
+.blog-post blockquote{
+	border-left: 3px solid @colorSecondary;
+}
+
+
+.dark-mode{
+	// @textTertiary:#848EA8;
+	// @colorPrimary:  var(--mainRed);
+	// @colorSecondary: #8c4259;
+	// @colorError : #8c4259;
+	// @colorSuccess : #4CAF50;
+
+
+	&{
+		color: var(--textPrimary);
+	}
+
+	.text-tertiary {
+		&, & a{
+			color: @textTertiary;
+		}
+	}
+
+	.text-primary{
+		&, & a{
+			color: var(--textPrimary);
+		}
+	}
+
+	.color-primary{
+		color: @colorPrimary;
+	}
+
+	.color-secondary{
+		color: @colorSecondary;
+	}
+
+	.res-message, .color-success{
+		color: @colorSuccess;
+	}
+
+	.color-error{
+		color: @colorError;
+	}
+
+	.field-box{
+		color: var(--textPrimary);
+	}
+
+	nav ul li a:before{
+		background: @colorSecondary;
+	}
+
+	// .btn{
+	// 	background-image: linear-gradient(to left,@colorPrimary,@colorSecondary) !important;
+	// }
+
+	.pseudo-divider:after{
+		background: linear-gradient(to left,@colorPrimary,@colorSecondary) !important;
+	}
+
+	#menu-open path{
+		fill:  var(--textSecondary);
+	}
+
+}
+
+div[role="navigation"]{
+	display: none;
+}
+@media only screen and (max-width: 800px) {
+	div[role="navigation"]{
+		display: block;
+	}
+	.container{
+		width: 95% !important;
+	}
+
+	section{
+			padding: 30px 0;
+	}
+
+	section svg text {
+	    font: bold 12px sans-serif;
+	    font-family: 'Work Sans', sans-serif;
+	}
+}
