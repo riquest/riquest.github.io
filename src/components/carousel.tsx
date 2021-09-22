@@ -26,7 +26,7 @@ function ControlledCarousel({ className }: { className?: string }) {
   `);
 
   return (
-    <Carousel className={className}>
+    <Carousel className={className} interval={8000}>
       <Carousel.Item>
         <Img fluid={query.allFile.edges[0].node.childImageSharp.fluid} />
         <Carousel.Caption>
@@ -37,7 +37,7 @@ function ControlledCarousel({ className }: { className?: string }) {
             {intl.formatMessage({
               id: "carousel.slide1.description",
               defaultMessage:
-                "Riquest est une association loi 1901 qui promeut le droit à l'information & la liberté d'expression par le contentieux stratégique.",
+                "Riquest est une association loi 1901 qui promeut le droit à l'information & la liberté d'expression par le contentieux collaboratif et stratégique.",
             })}
           </p>
         </Carousel.Caption>

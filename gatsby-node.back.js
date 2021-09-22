@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      news: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/pages/markdown/" } }) {
+      projects: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/pages/markdown/" } }) {
         edges {
           node {
             frontmatter {
@@ -49,14 +49,14 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `)
     .then((result) => {
-      const newsPosts = result.data.news.edges;
+      const newsPosts = result.data.projects.edges;
 
       const newsPerPage = 10;
       const numNewsPages = Math.ceil(newsPosts.length / newsPerPage);
 
       // Array.from({ length: numNewsPages }).forEach((_, i) => {
       //   createPage({
-      //     path: i === 0 ? `/news` : `/news/${i + 1}`,
+      //     path: i === 0 ? `/projects` : `/projects/${i + 1}`,
       //     component: require.resolve("./src/templates/newsListTemplate.tsx"),
       //     context: {
       //       limit: newsPerPage,
@@ -84,11 +84,11 @@ exports.createPages = ({ graphql, actions }) => {
       //   });
       // });
 
-      result.data.news.edges.forEach(({ node }) => {
-        // const template = node.frontmatter.template === undefined ? "news" : node.frontmatter.template;
+      result.data.projects.edges.forEach(({ node }) => {
+        // const template = node.frontmatter.template === undefined ? "projects" : node.frontmatter.template;
         createPage({
           path: node.frontmatter.slug,
-          component: require.resolve("./src/templates/newsTemplate.tsx"),
+          component: require.resolve("./src/templates/projectTemplate.tsx"),
           context: {
             slug: node.frontmatter.slug,
           },

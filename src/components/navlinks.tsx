@@ -86,10 +86,17 @@ const NavLinks = function ({ className }: { className?: string }) {
     },
     {
       name: formatMessage({
-        id: "nav.news",
-        defaultMessage: "ACTU",
+        id: "nav.projects",
+        defaultMessage: "NOS PROJETS",
       }),
-      url: "/latest-news",
+      url: "/projects",
+    },
+    {
+      name: formatMessage({
+        id: "nav.ressources",
+        defaultMessage: "RESSOURCES",
+      }),
+      url: "/ressources",
     },
     {
       name: formatMessage({
@@ -104,7 +111,7 @@ const NavLinks = function ({ className }: { className?: string }) {
     list.push(<ListItem key={e.url + "-" + i} data={e} />);
   });
 
-  list.push(<SwitchLang key={"lang"} />);
+  // list.push(<SwitchLang key={"lang"} />);
 
   list.push(<ThemeSwitchButton key="themeswitcher" />);
 

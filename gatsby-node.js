@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.url,
-      component: require.resolve(`./src/templates/newsTemplate.tsx`),
+      component: require.resolve(`./src/templates/projectTemplate.tsx`),
       context: {
         // additional data can be passed via context
         url: node.frontmatter.url,
@@ -34,15 +34,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  // create newsList page
+  // create projectsList page
   languages.forEach((lang) => {
-    const path = `/${lang}/latest-news`;
+    const path = `/${lang}/projects`;
     // eslint-disable-next-line no-useless-escape
-    const searchPath = `/\/news\/${lang}/`;
+    const searchPath = `/\/projects\/${lang}/`;
 
     createPage({
       path,
-      component: require.resolve("./src/templates/newsList.tsx"),
+      component: require.resolve("./src/templates/projectsList.tsx"),
       context: {
         searchPath,
       },
@@ -51,12 +51,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 };
 
 const analyzePath = (path) => {
-  const newsPath = "/news/";
-  const latestNewsPAth = "/latest-news";
+  const newsPath = "/projects/";
+  const latestNewsPath = "/projects";
   const pathArray = path.split("/");
   // console.log(path);
   return {
-    isLatestNews: path.includes(latestNewsPAth),
+    isLatestNews: path.includes(latestNewsPath),
     isNews: path.includes(newsPath),
     isRepeat: pathArray[1] === pathArray[2],
   };

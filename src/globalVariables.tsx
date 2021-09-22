@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 export const defaultLanguage = "fr";
-export const languages = ["en", "fr"];
+// export const languages = ["en", "fr"];
+export const languages = ["fr"];
+
 export const languageConfig = {
   "en": "🇬🇧",
   "fr": "🇫🇷",
