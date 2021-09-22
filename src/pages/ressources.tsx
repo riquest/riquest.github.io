@@ -59,7 +59,7 @@ const Ressources = function ({ data, className }: any) {
                 </>
               ),
               link: (
-                <Link to="/contact">
+                <Link to="/contact" className="link">
                   {intl.formatMessage({ id: "index.ressources.contact", defaultMessage: "nous contacter" })}
                 </Link>
               ),
@@ -91,5 +91,10 @@ export default styled(Ressources)`
   h2.title {
     font-size: 1.8rem;
     margin-top: 2rem;
+  }
+
+  .link {
+    color: var(--mainRed);
+    text-decoration: underline;
   }
 `;

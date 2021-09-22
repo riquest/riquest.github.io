@@ -13,7 +13,7 @@ export const breakpoints: Record<Device, string> = {
 
 export const respondTo = Object.keys(breakpoints).reduce((accumulator: any, label: any) => {
   accumulator[label] = (...args: any) => css`
-    @media (min-width: ${breakpoints[label]}) {
+    @media (max-width: ${breakpoints[label]}) {
       ${css(...args)};
     }
   `;

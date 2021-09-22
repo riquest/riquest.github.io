@@ -1,9 +1,9 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
 import Date from "./date";
 import { Calendar } from "./icons";
 import "../style/news-list.less";
+import styled from "styled-components";
 
 const NewsItem = (props: any) => {
   const [color, setColor] = useState("");
@@ -18,7 +18,7 @@ const NewsItem = (props: any) => {
   }, [color]);
 
   return (
-    <div className="item col s12 m6">
+    <div className={`item col s12 m6 ${props.className}`}>
       <div className="box">
         <div className="image">
           {/* <Img fluid={props.data.node.frontmatter.image.childImageSharp.fluid} /> */}
@@ -51,12 +51,6 @@ const NewsItem = (props: any) => {
   );
 };
 
-export default function (props: any) {
-  const data = props.data.allMarkdownRemark.edges;
-  const items: any[] = [];
-  data.forEach(function (e: any) {
-    if (props.remove && e.node.id === props.remove) return;
-    items.push(<NewsItem key={e.node.id} data={e} />);
-  });
-  return <div className="row">{items}</div>;
-}
+export default styled(NewsItem)`
+  background-color: "red";
+`;

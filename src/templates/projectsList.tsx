@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import NewsItems from "../components/item-news";
+import NewsItems from "../components/News";
 import SEO from "../components/seo";
 import { useIntl } from "gatsby-plugin-react-intl";
 import Title from "../components/Title";
@@ -16,7 +16,7 @@ function ProjectsList({ data }: any) {
         <Title
           text={intl.formatMessage({
             id: "projects.title",
-            defaultMessage: "Actualités",
+            defaultMessage: "Nos Projets",
           })}
         />
         <div className="text-primary">
@@ -24,7 +24,7 @@ function ProjectsList({ data }: any) {
             {
               id: "about.projects.intro",
               defaultMessage:
-                "Riquest et ses membres publient ici régulièrement des documents d'orientation ou des études sur les lacunes de la législation française actuelle, au moyen d'analyses juridiques comparées et d'entretiens avec des praticiens. ",
+                "Riquest et ses membres publient ici régulièrement des documents d'orientation ou des études sur les lacunes de la législation française actuelle, au moyen d'analyses juridiques comparées et d'entretiens avec des praticiens.",
             },
             { br: <br /> },
           )}

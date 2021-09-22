@@ -11,7 +11,7 @@ export default function ({ data }: any) {
       "June",
       "July",
       "August",
-      "September",
+      "Septembre",
       "October",
       "November",
       "December",

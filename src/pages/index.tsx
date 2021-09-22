@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import Carousel from "../components/carousel";
 import { useIntl, Link as MultiLangLink } from "gatsby-plugin-react-intl";
 import styled from "styled-components";
+import { respondTo } from "../components/util/mediaVar";
 
 const IndexPage = ({ className }: { className?: string }): JSX.Element => {
   const intl = useIntl();
@@ -19,13 +20,13 @@ const IndexPage = ({ className }: { className?: string }): JSX.Element => {
         })}
       />
       <div className="container">
-        <Carousel />
+        <Carousel className="caroussel" />
         <div className="text-primary intro">
           {intl.formatMessage(
             {
               id: "index.textPrimary",
               defaultMessage:
-                "Riquest est une organisation loi 1901 ayant pour objectif de proposer un soutien juridique auprès d’activistes, de journalistes et d'ONGs afin de  promouvoir la liberté de l'information dans le contexte de l’opacité croissante entourant l’action privée et publique.{br}Notre objectif est  de travailler en collaboration avec les acteurs de la société civile souhaitant faire valoir leur droit à l'accès à l'information fiable, diversifiée et pertinente pour l’exercice de leur mission ou la tenue d’un débat public libre. Plus largement, notre objectif comprend la promotion des droits du public en matière d'information, combinant  lorsque nécessaire les actions devant les tribunaux par des activités de plaidoyer, de mobilisation de l’opinion publique, et de formation des parties intéressées et du grand public à l’exercice du droit à l’accès à l’information.{br}Les restrictions indues à l’accès à l’information fragilisent  le recours à un débat public libre et limitent le contrôle démocratique sur certains sujets d’intérêt général.obstacle pour l’accès à la justice dans les domaines de la santé publique, l’environnement , les droits humains {br}Les secrets, comme le secret d’affaire, peuvent entraîner dans leur sillage l’activité de nombre d’acteurs économiques majeurs et ainsi favoriser l'impunité des multinationales et les obstacles à la justice pour les personnes affectées par des violations de droits humains causés par leurs activités.",
+                "Riquest est une organisation loi 1901 ayant pour objectif de proposer un soutien juridique auprès d’activistes, de journalistes et d'ONGs afin de  promouvoir la liberté de l'information dans le contexte de l’opacité croissante entourant l’action privée et publique.{br}Notre objectif est  de travailler en collaboration avec les acteurs de la société civile souhaitant faire valoir leur droit à l'accès à l'information fiable, diversifiée et pertinente pour l’exercice de leur mission ou la tenue d’un débat public libre. Plus largement, notre objectif comprend la promotion des droits du public en matière d'information, combinant  lorsque nécessaire les actions devant les tribunaux par des activités de plaidoyer, de mobilisation de l’opinion publique, et de formation des parties intéressées et du grand public à l’exercice du droit à l’accès à l’information.{br}Les restrictions indues à l’accès à l’information fragilisent  le recours à un débat public libre et limitent le contrôle démocratique sur certains sujets d’intérêt général. Elles représentent aussi un obstacle pour l’accès à la justice en cas d’atteintes à la santé publique, l’environnement, ou encore les droits humains.{br}Les secrets, comme le secret d’affaire, peuvent entraîner dans leur sillage l’activité de nombre d’acteurs économiques majeurs et ainsi favoriser l'impunité des multinationales et les obstacles à la justice pour les personnes affectées par des violations de droits humains causés par leurs activités.",
             },
             {
               br: (
@@ -48,5 +49,11 @@ const IndexPage = ({ className }: { className?: string }): JSX.Element => {
 export default styled(IndexPage)`
   .intro {
     margin-top: 1rem;
+  }
+
+  .caroussel {
+    ${respondTo.tablet`
+      display: none;
+    `}
   }
 `;

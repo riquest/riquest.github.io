@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 // import Date from "../components/date";
 import "../style/news-singlepage.less";
 
-export default function ({ data }: any) {
+const projectTemplate = ({ data }: any) => {
   return (
     <Layout>
       <SEO
@@ -39,7 +39,9 @@ export default function ({ data }: any) {
       </div>
     </Layout>
   );
-}
+};
+
+export default projectTemplate;
 
 export const query = graphql`
   query ($url: String!) {
