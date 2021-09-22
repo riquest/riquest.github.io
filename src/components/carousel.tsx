@@ -37,7 +37,7 @@ function ControlledCarousel({ className }: { className?: string }) {
             {intl.formatMessage({
               id: "carousel.slide1.description",
               defaultMessage:
-                "Riquest est une association loi 1901 qui promeut le droit à l'information & la liberté d'expression par le contentieux stratégique contre le secret d'Etat et d'affaires.",
+                "Riquest est une association loi 1901 qui promeut le droit à l'information & la liberté d'expression par le contentieux stratégique.",
             })}
           </p>
         </Carousel.Caption>
@@ -52,7 +52,7 @@ function ControlledCarousel({ className }: { className?: string }) {
             {intl.formatMessage({
               id: "carousel.slide2.description",
               defaultMessage:
-                "Riquest propose un soutien juridique pro-bono auprès d’activistes, de journalistes et d'ONGs afin de promouvoir la liberté de l'information dans le contexte de l’opacité croissante entourant l’action privée et publique.",
+                "Un soutien juridique, collaboratif et stratégique auprès d’activistes, de journalistes et d'ONGs afin de promouvoir la liberté de l'information dans le contexte de l’opacité croissante entourant l’action privée et publique.",
             })}
           </p>
         </Carousel.Caption>
@@ -61,13 +61,13 @@ function ControlledCarousel({ className }: { className?: string }) {
         <Img fluid={query.allFile.edges[2].node.childImageSharp.fluid} />
         <Carousel.Caption>
           <h4 className="caption-title">
-            {intl.formatMessage({ id: "carousel.slide3.title", defaultMessage: "Accès à l'information" })}
+            {intl.formatMessage({ id: "carousel.slide3.title", defaultMessage: "Nos projets" })}
           </h4>
           <p className="caption-description">
             {intl.formatMessage({
               id: "carousel.slide3.description",
               defaultMessage:
-                "Par le biais du contentieux stratégique sur l’accès à l’information, notre objectif est de lutter contre l’opacité et l’impunité des activités d’acteurs économiques ou politiques puissants, de réduire les inégalités dans l’accès aux informations et de faciliter l’accès à la justice des personnes affectées par les violations de droits humains.",
+                "Visent à réduire l’opacité disproportionnée de l’action publique et privée lorsqu’elle limite le débat public sur des sujets d’intérêt général ou l’accès à la justice de victimes de violations de droits humains.",
             })}
           </p>
         </Carousel.Caption>

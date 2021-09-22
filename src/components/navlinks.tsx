@@ -91,6 +91,13 @@ const NavLinks = function ({ className }: { className?: string }) {
       }),
       url: "/latest-news",
     },
+    {
+      name: formatMessage({
+        id: "nav.contact",
+        defaultMessage: "CONTACT",
+      }),
+      url: "/contact",
+    },
   ];
 
   navLinks.forEach(function (e: any, i: any) {

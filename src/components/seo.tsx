@@ -27,12 +27,13 @@ function SEO({ description, title, image }: Props) {
   const lang = intl.locale;
   const defaultSeoTitle = intl.formatMessage({
     id: "default.seoTitle",
-    defaultMessage: "Reclaim your right to information",
+    defaultMessage: "Riquest - droit à l'information",
   });
 
   const defaultSeoDescription = intl.formatMessage({
     id: "default.seoDescription",
-    defaultMessage: "We are here to help you regain your right to information",
+    defaultMessage:
+      "La Plateforme pour l’accès à l’information. Nous proposons un soutien juridique pro-bono auprès d’activistes, de journalistes et d'ONGs. Riquest promeut la liberté de l'information dans le contexte de l’opacité croissante entourant l’action privée et publique",
   });
   const metaDescription = description || defaultSeoDescription;
   const ogImage = image || site.siteMetadata.logo;
