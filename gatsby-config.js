@@ -5,17 +5,14 @@ const { defaultLanguage, languages, languageConfig } = require("./src/globalVari
 
 const siteMetadata = {
   mainName: "Riquest",
-  logo: "/images/logo.png",
+  logo: "/images/logo-250px.png",
   logoDark: "/images/logo-dark-250px.png",
-  icon: "/images/logo-250px.png",
   authorTwitter: "@",
   portfolioItemsPerPage: 10,
   defaultColorMode: "light", // "light" or "dark"
   defaultLanguage,
   languages,
   languageConfig,
-  darkMode: false,
-  switchTheme: true,
 };
 
 /** @type { import("gatsby").GatsbyConfig } */

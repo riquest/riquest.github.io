@@ -7,14 +7,14 @@ function Header() {
     query {
       site {
         siteMetadata {
-          icon
+          logo
         }
       }
     }
   `);
   return (
     <Helmet>
-      <link rel="icon" href={query.site.siteMetadata.icon} type="image/png" />
+      <link rel="icon" href={query.site.siteMetadata.logo} type="image/png" />
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akzhy/trunk/dist/trunk.min.css" />
       <link href="https://fonts.googleapis.com/css?family=Work+Sans:800|Poppins&display=swap" rel="stylesheet" />
     </Helmet>
