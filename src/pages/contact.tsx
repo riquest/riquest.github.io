@@ -72,6 +72,7 @@ const About = function ({ data, className }: any) {
                 id: "contact.cannelle.description",
                 defaultMessage: "Cofondatrice et coordinatrice de la plateforme",
               })}
+              <br />
               <a className="color-primary email" href="mailto:contact@riquest.org">
                 contact@riquest.org
               </a>
@@ -92,6 +93,7 @@ const About = function ({ data, className }: any) {
                 id: "contact.jp.description",
                 defaultMessage: "Cofondateur et coordinateur de la plateforme",
               })}
+              <br />
               <a className="color-primary email" href="mailto:contact@riquest.org">
                 contact@riquest.org
               </a>
@@ -110,7 +112,7 @@ export default styled(About)`
   }
 
   .email {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: inline-block;
   }
 

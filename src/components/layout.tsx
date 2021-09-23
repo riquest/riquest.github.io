@@ -11,6 +11,7 @@ interface Props {
   children?: ReactNode;
   placeholder?: boolean;
 }
+
 const Layout = ({ className, placeholder, children }: Props) => {
   return (
     <div className={className}>

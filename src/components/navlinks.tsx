@@ -5,6 +5,7 @@ import useCurrentPage from "../hooks/useCurrentPage";
 import styled from "styled-components";
 import { ColorModeContext } from "../context/colorMode";
 import { languageConfig } from "../globalVariables";
+import { Twitter as TwitterIcon } from "../components/icons";
 
 function SwitchLang() {
   const { locale } = useIntl();
@@ -22,6 +23,29 @@ function SwitchLang() {
     </>
   );
 }
+
+const StyledSpan = styled.span`
+  margin: 0 0.5rem;
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.25s;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+`;
+
+const Twitter = (): JSX.Element => {
+  return (
+    <StyledSpan>
+      <a href="https://twitter.com/RiquestAsso" title="Twitter">
+        <TwitterIcon />
+      </a>
+    </StyledSpan>
+  );
+};
 
 function ListItem(props: { data: any }) {
   const data = props.data;
@@ -112,6 +136,7 @@ const NavLinks = function ({ className }: { className?: string }) {
   });
 
   // list.push(<SwitchLang key={"lang"} />);
+  list.push(<Twitter />);
 
   list.push(<ThemeSwitchButton key="themeswitcher" />);
 

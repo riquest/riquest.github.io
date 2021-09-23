@@ -20,6 +20,7 @@ const SideBarcontent = styled.div`
 
   .switch-theme {
     display: inline-block;
+    vertical-align: middle;
   }
 
   .links {
