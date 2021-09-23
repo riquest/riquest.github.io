@@ -40,7 +40,7 @@ const StyledSpan = styled.span`
 const Twitter = (): JSX.Element => {
   return (
     <StyledSpan>
-      <a href="https://twitter.com/RiquestAsso" title="Twitter">
+      <a href="https://twitter.com/RiquestAsso" title="Twitter" target="_blank" rel="noreferrer">
         <TwitterIcon />
       </a>
     </StyledSpan>
